@@ -1,8 +1,7 @@
 FROM golang:latest
 WORKDIR /go/src/application/
 COPY app.go .
-RUN go mod init
-RUN GOOS=linux go build -a -o app .
+RUN go build app.go
 
 FROM alpine:latest  
 WORKDIR /root/
